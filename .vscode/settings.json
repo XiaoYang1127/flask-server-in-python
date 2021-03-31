@@ -1,0 +1,73 @@
+{
+  //
+  //  workbench
+  //
+  "workbench.statusBar.visible": true,
+  "workbench.activityBar.visible": true,
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Visual Studio Dark",
+  //
+  //  breadcrumbs
+  //
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": true,
+  //
+  //  editor
+  //
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.renderFinalNewline": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.fontSize": 16,
+  //
+  //  search
+  //
+  "search.collapseResults": "alwaysCollapse",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/viz-lib": true
+  },
+  //
+  //  files
+  //
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.idea": true,
+    "**/*.pyc": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.encoding": "utf8",
+  //
+  //  python
+  //
+  "python.languageServer": "Jedi",
+  "python.pythonPath": "C:\\python375\\python.exe",
+  "python.venvPath": "venv",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=97",
+    "--ignore=W503, E203, E501, E402, E401, F401",
+    "--exclude=.tox, .git, __pycache__, build, dist, *.pyc, *.egg-info, .cache, .eggs",
+    "--max-complexity=80"
+  ],
+  "python.formatting.provider": "autopep8",
+  "python.formatting.autopep8Args": ["--max-line-length=97", "--ignore=E402", "--experimental"],
+  //
+  //  other
+  //
+  "diffEditor.ignoreTrimWhitespace": true,
+  "explorer.confirmDragAndDrop": true,
+  "explorer.compactFolders": false
+}
