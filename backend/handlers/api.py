@@ -3,7 +3,7 @@ from flask_restful import Api
 from werkzeug.wrappers import Response
 
 from backend.utils import json_dumps
-from backend.handlers import auth
+from backend.handlers import auth, test
 from backend.handlers.users import CUserResource
 
 

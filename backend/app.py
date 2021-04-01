@@ -3,7 +3,7 @@ import redis
 
 from flask import Flask
 from werkzeug.middleware.proxy_fix import ProxyFix
-from flask_cors import CORS
+
 
 from backend import settings
 from backend.utils import log, app_log
@@ -27,10 +27,13 @@ class CMyApp(Flask):
 
 def create_app(from_shell=False):
     from backend import (
-        authentication,
-        handlers,
+        cors,
+        talisman,
+        limiter,
         migrate,
         mail,
+        authentication,
+        handlers,
     )
     from backend.models.base import db
 
@@ -39,7 +42,10 @@ def create_app(from_shell=False):
 
     # application init
     app = CMyApp()
-    CORS(app)
+    cors.init_app(app)
+    talisman.init_app(app)
+    limiter.init_app(app)
+
     db.init_app(app)
     migrate.init_app(app, db)
     mail.init_app(app)

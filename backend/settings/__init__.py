@@ -51,15 +51,12 @@ PROXIES_COUNT = int(os.environ.get("REDASH_PROXIES_COUNT", "1"))
 
 
 # mail
-MAIL_HOST = os.environ.get("MAIL_HOST", "localhost")
-MAIL_SERVER = os.environ.get("REDASH_MAIL_SERVER", MAIL_HOST)
-MAIL_PORT = int(os.environ.get("REDASH_MAIL_PORT", 25))
-MAIL_USE_TLS = parse_boolean(os.environ.get("REDASH_MAIL_USE_TLS", "false"))
-MAIL_USE_SSL = parse_boolean(os.environ.get("REDASH_MAIL_USE_SSL", "false"))
-MAIL_USERNAME = os.environ.get("REDASH_MAIL_USERNAME", None)
-MAIL_PASSWORD = os.environ.get("REDASH_MAIL_PASSWORD", None)
-MAIL_DEFAULT_SENDER = os.environ.get("REDASH_MAIL_DEFAULT_SENDER", None)
-MAIL_MAX_EMAILS = os.environ.get("REDASH_MAIL_MAX_EMAILS", None)
-MAIL_ASCII_ATTACHMENTS = parse_boolean(
-    os.environ.get("REDASH_MAIL_ASCII_ATTACHMENTS", "false")
-)
+MAIL_SERVER = os.environ.get("MAIL_SERVER", os.environ.get("MAIL_HOST", "smtp.qq.com"))
+MAIL_PORT = int(os.environ.get("MAIL_PORT", 587))
+MAIL_USE_TLS = parse_boolean(os.environ.get("MAIL_USE_TLS", "true"))  # 587
+MAIL_USE_SSL = parse_boolean(os.environ.get("MAIL_USE_SSL", "false"))  # 465
+MAIL_USERNAME = os.environ.get("MAIL_USERNAME", "")
+MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", "")  # the authorization code of email
+MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", "")  # your email address
+MAIL_MAX_EMAILS = os.environ.get("MAIL_MAX_EMAILS", 5000)
+MAIL_ASCII_ATTACHMENTS = parse_boolean(os.environ.get("MAIL_ASCII_ATTACHMENTS", "false"))

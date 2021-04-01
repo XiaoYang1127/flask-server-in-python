@@ -45,6 +45,9 @@ class CUser(CTimestampMixin, CQueryMixin, db.Model, UserMixin):
     def verify_password(self, password):
         return self.password_hash and custom_app_context.verify(password, self.password_hash)
 
+    def is_admin(self):
+        return False
+
     @classmethod
     def get_by_email(cls, email):
         return cls.query.filter(cls.email == email).first()

@@ -54,13 +54,16 @@ def send_test_mail(email=None):
     if email is None:
         email = settings.MAIL_DEFAULT_SENDER
 
-    mail.send(
-        Message(
-            subject="Test Message",
-            recipients=[email],
-            body="Test message."
-        )
+    if not settings.MAIL_USERNAME or not settings.MAIL_PASSWORD:
+        print("need to config your mail info first\n")
+        return
+
+    msg = Message(
+        subject="flask-demo",
+        recipients=[email],
+        body="test message from flask-demo."
     )
+    mail.send(msg)
 
 
 @manager.command()
