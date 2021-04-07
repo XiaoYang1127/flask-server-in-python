@@ -60,3 +60,8 @@ MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD", "")  # the authorization code of
 MAIL_DEFAULT_SENDER = os.environ.get("MAIL_DEFAULT_SENDER", "")  # your email address
 MAIL_MAX_EMAILS = os.environ.get("MAIL_MAX_EMAILS", 5000)
 MAIL_ASCII_ATTACHMENTS = parse_boolean(os.environ.get("MAIL_ASCII_ATTACHMENTS", "false"))
+
+
+# deploy
+DEPLOY_THREADED = parse_boolean(os.environ.get("DEPLOY_THREADED", "true"))
+DEPLOY_PROCESSES = int(os.environ.get("DEPLOY_PROCESSES", 1))

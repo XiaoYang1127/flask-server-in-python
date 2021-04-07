@@ -88,6 +88,7 @@ def log_user_logged_in(app, user):
 
 
 def init_app(app):
+    app.config["SECRET_KEY"] = 'flask-login'
     jwt_init_app(app)
     login_manager.init_app(app)
     login_manager.anonymous_user = models.CAnonymousUser
