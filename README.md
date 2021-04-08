@@ -6,6 +6,10 @@
 
 - https://dormousehole.readthedocs.io/en/stable/
 
+### flask-restful
+
+- https://flask-restful.readthedocs.io/en/0.3.8/
+
 ### flask-sqlalchemy
 
 - http://www.pythondoc.com/flask-sqlalchemy/quickstart.html
