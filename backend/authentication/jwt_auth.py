@@ -9,13 +9,12 @@ from flask_jwt_extended import (
 
 
 def init_app(app):
-    app.config['JWT_SECRET_KEY'] = 'jwt_token_for'
     JWTManager(app)
 
 
 def jwt_token_for(user):
     identity = {
-        'email': user.email
+        "email": user.email
     }
 
     access_token = create_access_token(
@@ -25,9 +24,9 @@ def jwt_token_for(user):
     refresh_token = create_refresh_token(identity=identity)
 
     return {
-        'email': identity,
-        'access_token': access_token,
-        'refresh_token': refresh_token,
+        "email": identity,
+        "access_token": access_token,
+        "refresh_token": refresh_token,
     }
 
 

@@ -53,6 +53,7 @@ PROXIES_COUNT = int(os.environ.get("REDASH_PROXIES_COUNT", "1"))
 # mail
 MAIL_SERVER = os.environ.get("MAIL_SERVER", os.environ.get("MAIL_HOST", "smtp.qq.com"))
 MAIL_PORT = int(os.environ.get("MAIL_PORT", 587))
+MAIL_DEBUG = parse_boolean(os.environ.get("MAIL_DEBUG", "true"))
 MAIL_USE_TLS = parse_boolean(os.environ.get("MAIL_USE_TLS", "true"))  # 587
 MAIL_USE_SSL = parse_boolean(os.environ.get("MAIL_USE_SSL", "false"))  # 465
 MAIL_USERNAME = os.environ.get("MAIL_USERNAME", "")
@@ -65,3 +66,13 @@ MAIL_ASCII_ATTACHMENTS = parse_boolean(os.environ.get("MAIL_ASCII_ATTACHMENTS", 
 # deploy
 DEPLOY_THREADED = parse_boolean(os.environ.get("DEPLOY_THREADED", "true"))
 DEPLOY_PROCESSES = int(os.environ.get("DEPLOY_PROCESSES", 1))
+
+
+# app
+APP_SETTINGS = {
+    # session secure
+    "SECRET_KEY": os.environ.get("SECRET_KEY", "you need change this"),
+    "JWT_SECRET_KEY": os.environ.get("JWT_SECRET_KEY", "you need change this"),
+    # jwt auth exception
+    "PROPAGATE_EXCEPTIONS": os.environ.get("PROPAGATE_EXCEPTIONS", True),
+}

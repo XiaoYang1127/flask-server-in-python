@@ -43,6 +43,15 @@ def run_in_production():
     server.serve_forever()
 
 
+def run_in_production2():
+    from wsgiref.simple_server import make_server
+    from backend import create_app
+
+    app = create_app()
+    server = make_server(APP_HOST, APP_PORT, app)
+    server.serve_forever()
+
+
 if __name__ == "__main__":
     args = sys.argv
     if len(args) <= 1:

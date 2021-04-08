@@ -42,8 +42,9 @@ def create_app(from_shell=False):
 
     # application init
     app = CMyApp()
+    app.config.update(settings.APP_SETTINGS)
     cors.init_app(app)
-    talisman.init_app(app)
+    talisman.init_app(app, force_https=False)
     limiter.init_app(app)
 
     db.init_app(app)

@@ -10,7 +10,8 @@ debug = True
 loglevel = "debug"
 bind = "0.0.0.0:8080"
 pidfile = "logs/gunicorn.pid"
-logfile = "logs/debug.log"
+# accesslog = "logs/access.log"
+# errorlog = "logs/error.log"
 
 # 启动的进程数
 workers = multiprocessing.cpu_count() * 2 + 1

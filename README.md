@@ -55,14 +55,4 @@
 
 ## 部署方式
 
-### gunicorn + gevent
-
-- gunicorn -c gunicorn.py backend.wsgi:app
-
-### python + gevent
-
-- python main.py pro
-
-### 开发模式
-
-- python main.py dev
+- [如何支持高并发部署](./doc/deploy.md)

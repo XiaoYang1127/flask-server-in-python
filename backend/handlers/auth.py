@@ -50,7 +50,7 @@ def register_user():
         user_model.hash_password(password)
         models.db.session.add(user_model)
         models.db.session.commit()
-        app_log.log(f"{name}:{email} register success")
+        app_log.info(f"{name}:{email} register success")
     except Exception as e:
         app_log.exception("register_user failed %s" % (str(e)))
         abort(400, message=locales.MODEL_ADD_FAILED)
